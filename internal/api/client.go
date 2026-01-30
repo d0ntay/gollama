@@ -71,6 +71,9 @@ func Chat(msg string) {
 	var reply string
 
 	scanner := bufio.NewScanner(resp.Body)
+
+	fmt.Print()
+
 	for scanner.Scan() {
 		err = json.Unmarshal(scanner.Bytes(),&chatResp)
 		if err != nil{
