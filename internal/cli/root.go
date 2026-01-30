@@ -3,7 +3,6 @@ package cli
 import (
 	"fmt"
 	"os"
-	"strings"
 	
 	"github.com/d0ntay/gollama/internal/api"
 	
@@ -20,12 +19,8 @@ var RootCmd = &cobra.Command{
 		}
 		msg := parseArgs(cmd, args)
 
-		resp, err := api.Chat(msg)
-		if err != nil {
-			return err
-		}
+		api.Chat(msg)
 
-		fmt.Println(resp)
 		return nil
 	},
 }
