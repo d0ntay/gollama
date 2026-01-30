@@ -72,7 +72,7 @@ func Chat(msg string) {
 
 	scanner := bufio.NewScanner(resp.Body)
 
-	fmt.Print()
+	fmt.Print("\n")
 
 	for scanner.Scan() {
 		err = json.Unmarshal(scanner.Bytes(),&chatResp)
